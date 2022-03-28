@@ -5,8 +5,7 @@ using namespace std;
 int main() {
 
     int num {};
-    const int lower {10};
-    const int upper {20};
+    const int lower {10}, upper {20};
 
     cout << boolalpha;
 
