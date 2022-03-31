@@ -17,6 +17,8 @@ int main() {
         cout << "M - Display mean of the numbers" << endl;
         cout << "S - Display the smallest number" << endl;
         cout << "L - Display the largest number" << endl;
+        cout << "F - Display the count of a certain value in the list" << endl;
+        cout << "C - Clear the list" << endl;
         cout << "Q - Quit" << endl;
         cout << "\nEnter your choice: ";
         cin >> selection;
@@ -59,7 +61,7 @@ int main() {
                 if (vec.empty()) {
                     cout << "Unable to calculate the mean - no data" << endl;
                 } else {
-                    int avg{};
+                    double avg{};
                     cout << "The average of the list is: ";
                     for (auto num: vec)
                         avg += num;
@@ -108,13 +110,18 @@ int main() {
                 cout << seek << " appears in the list " << count << " times." << endl;
             }
                 break;
+
+            case 'q':
+            case 'Q':
+                cout << "Goodbye." << endl;
+                break;
+
             default:
-            cout << "Sorry, that's not a valid input, please try again..." << endl;
+                cout << "Sorry, that's not a valid input, please try again..." << endl;
         }
 
     } while (selection != 'q' && selection != 'Q');
 
-
-    cout << "\nGoodbye." << endl;
+    cout << endl;
     return 0;
 }
