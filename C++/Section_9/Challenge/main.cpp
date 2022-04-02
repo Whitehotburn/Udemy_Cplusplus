@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -90,9 +91,9 @@ int main() {
                 if (vec.empty()) {
                     cout << "Unable to determine the largest number - list is empty." << endl;
                 } else {
-                    int small{};
-                    small = *max_element(vec.begin(), vec.end());
-                    cout << "The largest number is: " << small << endl;
+                    int large{};
+                    large = *max_element(vec.begin(), vec.end());
+                    cout << "The largest number is: " << large << endl;
                 }
             }
                 break;
