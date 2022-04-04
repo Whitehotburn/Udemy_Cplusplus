@@ -6,8 +6,8 @@ using namespace std;
 
 int main() {
 
-    string alphabet{"abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-    string key {"XZNLWEBGJHQDYVTKFUOMPCIASR xznlwebgjhqdyvtkfuompciasr"};
+    string alphabet{" ^'_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    string key {"^ _'XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr"};
 
     string input{};
     cout << "Enter a string to encrypt and decrypt: ";
@@ -15,11 +15,13 @@ int main() {
     
     string encode{};
 
-    for (size_t i{0}; i < input.length(); i++) {
-        if (isalpha(input.at(i))) // only handle letters
-            encode.push_back(key.at(alphabet.find(input.at(i))));
-        else
-            encode.push_back(input.at(i));
+    for (char c: input) {
+        size_t position = alphabet.find(c);
+        if (position != string::npos) { // only handle defined alphabet
+            encode.push_back(key.at(position));
+        } else {
+            encode.push_back(c);
+        }
     }
 
     cout << "The encoded message is: ";
@@ -27,11 +29,13 @@ int main() {
 
     string decode{};
 
-    for (size_t i{0}; i < encode.length(); i++) {
-        if (isalpha(input.at(i))) // only handle letters
-            decode.push_back(alphabet.at(key.find(encode.at(i))));
-        else
-            decode.push_back(input.at(i));
+    for (char c: encode) {
+        size_t position = key.find(c);
+        if (position != string::npos) { // only handle defined alphabet
+            decode.push_back(alphabet.at(position));
+        } else {
+            decode.push_back(c);
+        }
     }
 
     cout << "The decoded message is: ";
