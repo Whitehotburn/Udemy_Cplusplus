@@ -9,8 +9,6 @@ int main() {
     cout << "Enter a string to pyramid-ize: ";
     getline(cin, input);
 
-    size_t total_length = (input.length() * 2) - 1;
-
     cout << endl; 
 
     size_t pad_size = input.length() - 1;
