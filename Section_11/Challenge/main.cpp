@@ -97,6 +97,11 @@ void find(const vector<int> &vec, int seek){
     cout << seek << " appears in the list " << count << " times." << endl;
 }
 
+void clear_list(vector<int> &vec){
+    cout << "Clearing the vector..." << endl;
+    vec.clear();
+}
+
 int main() {
 
     char selection{};
@@ -133,8 +138,7 @@ int main() {
             find(vec, seek);
 
         } else if (selection == 'C') {
-            cout << "Clearing the vector..." << endl;
-            vec.clear();
+            clear_list(vec);
 
         } else {
             cout << "Sorry, that's not a valid input, please try again..." << endl;
