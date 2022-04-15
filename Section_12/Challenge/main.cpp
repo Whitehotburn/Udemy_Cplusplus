@@ -9,15 +9,15 @@ void print(const int *const array, const size_t &size) {
     cout << "]" << endl;
 }
 
-int *apply_all(const int *array_1, const size_t &size_1, const int *array_2, const size_t &size_2) {
-    size_t new_size = size_1 * size_2;
+int *apply_all(const int *const &array_1, const size_t &size_1, const int *const &array_2, const size_t &size_2) {
     int *new_array{nullptr};
-    new_array = new int[new_size];
+    new_array = new int[size_1 * size_2];
     size_t count{};
 
     for (size_t i{0}; i<size_2; i++){
         for (size_t j{0}; j<size_1; j++){
-            *(new_array + count) = array_2[i] * array_1[j];
+            // *(new_array + count) = array_2[i] * array_1[j];
+            new_array[count] = array_2[i] * array_1[j];
             count++;
         }
     }
