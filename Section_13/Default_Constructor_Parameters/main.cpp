@@ -15,8 +15,8 @@ public:
     Player(string name_val="None", int health_val=0, int xp_val=0);
 };
 
-    Player::Player(string name_val, int health_val, int xp_val) : name{name_val}, health{0}, xp{0} {
-        cout << "Three-args constructor" << endl;
+Player::Player(string name_val, int health_val, int xp_val) : name{name_val}, health{0}, xp{0} {
+    cout << "Three-args constructor" << endl;
     }
 
 int main() {
