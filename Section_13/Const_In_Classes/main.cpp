@@ -17,6 +17,12 @@ public:
     void set_name(string name_val) {
         name = name_val;
     }
+    void set_health(int health_val) {
+        health = health_val;
+    }
+    void set_xp(int xp_val) {
+        xp = xp_val;
+    }
 // Overloaded Constructors
     Player();
     Player(string name_val);
