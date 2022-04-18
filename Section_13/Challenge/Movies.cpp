@@ -31,7 +31,7 @@ Movies::~Movies() {
     and add that movie object to the movies vector and return true
     *********************************************************************/
 bool Movies::add_movie(std::string name, std::string rating, int watched) {
-    for (const auto &movie: movies) {
+    for (auto const &movie: movies) {
         if (name == movie.get_name()) {
             // std::cout << movie.get_name() << " already in list" << std::endl;
             return false;
@@ -75,7 +75,7 @@ void Movies::display() const {
         std::cout << "--------------------------------\nSorry, no movies to display\n" << std::endl;
     } else {
     std::cout << "\n===================================" << std::endl;
-    for (const auto &movie: movies) {
+    for (auto const &movie: movies) {
         movie.display();
     }
     std::cout << "===================================\n" << std::endl;
