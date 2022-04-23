@@ -27,7 +27,7 @@ bool Trust_Account::withdraw(double amount) {
         return false;
     } else {
         balance -= amount;
-        num_of_withdraw += 1;
+        num_of_withdraw++;
         return true;
     }
 }
