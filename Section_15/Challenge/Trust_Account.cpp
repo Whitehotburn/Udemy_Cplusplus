@@ -16,19 +16,12 @@ bool Trust_Account::deposit(double amount) {
 //      tracking variable "num_of_withdrawals" to track annual withdrawals - limited to max of 3 per year
 //      cannot withdraw more than 20% of account balance at one time
 bool Trust_Account::withdraw(double amount) {
-    if (balance-amount <= 0) {
-        std::cout << "Failed Withdraw of " << amount << " from " << "[Account: " << name << ": " << balance << "]" << std::endl;
-        return false;
-    } else if (num_of_withdraw >= max_withdrawals) {
+    if (num_of_withdraw >= max_withdrawals || (amount > (balance * max_withdraw_percent))) {
         std::cout << "Withdraw FAILED - number of annual withdrawals exceeded for this account!" << std::endl;
         return false;
-    } else if (amount > (balance * max_withdraw_percent)) {
-        std::cout << "Withdraw FAILED - attempted to withdraw " << amount << " from the account, >20% of the account balance!" << std::endl;
-        return false;
     } else {
-        balance -= amount;
         num_of_withdraw++;
-        return true;
+        return Savings_Account::withdraw(amount);
     }
 }
 
