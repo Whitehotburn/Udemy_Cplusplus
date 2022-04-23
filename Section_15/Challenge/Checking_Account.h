@@ -11,9 +11,10 @@ class Checking_Account: public Account {
 private:
     static constexpr const char *def_name = "Unnamed Checking Account";
     static constexpr double def_balance = 0.0;
+    static constexpr double per_with_fee = 1.5;  // compile-time constant, per class thing, not per object
 public:
-    Checking_Account(std::string name = def_name, double balance =def_balance);    
-    bool withdraw(double amount);
+    Checking_Account(std::string name = def_name, double balance = def_balance);    
+    bool withdraw(double);
     // Inherits the Account::deposit methods
 };
 
