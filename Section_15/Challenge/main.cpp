@@ -64,6 +64,12 @@ int main() {
     withdraw(tst_accounts, 100);  // fails for $50k account "Rich" - 3 withdrawals exceeded
     withdraw(tst_accounts, 100);  // should fail
 
+    // Can also do the following for testing Trust Account withdrawals
+    //
+    // for (size_t i{1}; i<=5; i++) {
+    //     withdraw(tst_accounts, 1000);
+    // }
+
     return 0;
 }
 
