@@ -97,12 +97,11 @@ int main()
             // else
             //     std::cout << std::setw(field_1_width) << std::left << "";
 
-            // Country name only for the first city
+            // Country name only when the first city in each country is displayed
             std::cout << std::setw(field_1_width) << std::left << ((count == 0) ? country.name : "");
 
             std::cout << std::setw(field_2_width) << std::left << city.name
-                      << std::setw(field_3_width) << std::right
-                      << std::setprecision(3) << std::scientific << std::uppercase << city.population
+                      << std::setw(field_3_width) << std::right << city.population
                       << std::setw(field_4_width) << std::right << std::setprecision(2) << std::fixed << city.cost
                       << std::endl;
             count++;
