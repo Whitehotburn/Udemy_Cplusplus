@@ -92,10 +92,13 @@ int main()
     for(auto country : tours.countries) {   // loop through the countries
         size_t count = 0;
         for(auto city : country.cities) {       // loop through the cities for each country
-            if (count == 0)
-                std::cout << std::setw(field_1_width) << std::left << country.name;
-            else
-                std::cout << std::setw(field_1_width) << std::left << "";
+            // if (count == 0)
+            //     std::cout << std::setw(field_1_width) << std::left << country.name;
+            // else
+            //     std::cout << std::setw(field_1_width) << std::left << "";
+
+            // Country name only for the first city
+            std::cout << std::setw(field_1_width) << std::left << ((count == 0) ? country.name : "");
 
             std::cout << std::setw(field_2_width) << std::left << city.name
                       << std::setw(field_3_width) << std::right
