@@ -14,9 +14,9 @@ Student2 responses
 
 Here is a sample file.
 
-ABCDE                  
-Frank                     
-ABCDE                  
+ABCDE
+Frank
+ABCDE
 Larry
 ABCAC
 Moe
