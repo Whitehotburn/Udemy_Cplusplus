@@ -6,8 +6,8 @@
 #include <string>
 
 int main() {
-    std::ifstream in_file {"../poem.txt"};
-    std::ofstream out_file{"../poem_out.txt"};
+    std::ifstream in_file {"./poem.txt"};
+    std::ofstream out_file{"./poem_out.txt"};
     if (!in_file) {
         std::cerr << "Error opening input file" << std::endl;
         return 1;
@@ -16,6 +16,10 @@ int main() {
         std::cerr << "Error opening output file" << std::endl;
         return 1;
     }
+
+    // std::string line{}; // line by line instead of by char
+    // while (std::getline(in_file, line))
+    //     out_file << line << std::endl;
     
     char c;
     while (in_file.get(c))
