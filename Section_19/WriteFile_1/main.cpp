@@ -5,7 +5,7 @@
 #include <string>
 
 int main()  {
-    std::ofstream out_file {"../output.txt", std::ios::app};
+    std::ofstream out_file {"./output.txt", std::ios::app};
     if (!out_file) {
         std::cerr << "Error creating file" << std::endl;
         return 1;
