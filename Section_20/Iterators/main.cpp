@@ -62,6 +62,7 @@ void test3() {
     std::cout << "\n=============================" << std::endl;
     std::vector<int> nums1 {1, 2, 3, 4, 5};
 
+    // the following two lines are equivalent
     std::vector<int>::const_iterator it1 = nums1.begin();
     // auto it1 = nums1.cbegin();
     
@@ -90,10 +91,12 @@ void test4() {
     }
 
     // const reverse iterator over a list
-    std::list<std::string> name {"Larry", "Moe", "Curly"};
-    auto it2 =name.crbegin();    // iterator over list of strings  point to Curly
+    std::list<std::string> names {"Larry", "Moe", "Curly"};
+    auto it2 =names.crbegin();    // iterator over list of strings  point to Curly
     std::cout << *it2 << std::endl;
     it2++;  // point to Moe
+    std::cout << *it2 << std::endl;
+    it2++;  // point to Larry
     std::cout << *it2 << std::endl;
 
     // iterator over a map
@@ -123,10 +126,10 @@ void test5() {
 }
 int main() {
 
-//    test1();
-//    test2();
-//    test3();
-//    test4();
+    // test1();
+    // test2();
+    // test3();
+    // test4();
     test5();
     return 0;
 }
