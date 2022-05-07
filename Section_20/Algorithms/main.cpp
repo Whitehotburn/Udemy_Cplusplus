@@ -72,9 +72,8 @@ void count_if_test() {
     std::cout << num << " odd numbers found" << std::endl;
     
     // how can we determine how many elements in vec are >= 5?
-    num = std::count_if(vec.begin(), vec.end(), [](int x) { return x>=5;   });
-    std::cout << num << "  numbers are >= 5" << std::endl;
-
+    num = std::count_if(vec.begin(), vec.end(), [](int x) { return x>=5; });
+    std::cout << num << " numbers are >= 5" << std::endl;
 }
 
 // Replace occurrences of elements in a container
@@ -119,11 +118,11 @@ void string_transform_test() {
 
 int main() {
     // find_test();
-   count_test();
-//    count_if_test();
-//    replace_test();
-//    all_of_test();
-//    string_transform_test();
+    // count_test();
+    // count_if_test();
+    // replace_test();
+    // all_of_test();
+    string_transform_test();
 
     return 0;
 }
