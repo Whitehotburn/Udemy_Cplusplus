@@ -85,6 +85,7 @@ void test2() {
     std::cout << "vec capacity: " << vec.capacity() << std::endl;
     
 }
+
 void test3() {
     std::cout << "\nTest3 =========================" << std::endl;
 
@@ -202,7 +203,6 @@ void test9() {
     display(vec2);
     std::cout << std::endl;
 
-    
     // Copy_if the element is even
     
     vec1 = {1,2,3,4,5,6,7,8,9,10};
@@ -216,7 +216,6 @@ void test9() {
             [](int x) { return x%2 == 0; });
     display(vec1);
     display(vec2);
-    
     
 }
 
@@ -237,8 +236,6 @@ void test10() {
     display(vec3);
     
 }
-
-
 
 // Insertion from another vector
 // Insert vec2 into vec1 before the 5
