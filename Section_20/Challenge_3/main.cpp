@@ -61,10 +61,25 @@ void part1() {
     std::map<std::string, int> words;
     std::string line;       
     std::string word;   
-    std::ifstream in_file {"../words.txt"};
+    std::ifstream in_file {"./words.txt"};
     if (in_file) {
-        
-        // You implement this code
+
+    while(std::getline(in_file, line)) {
+        std::stringstream ss(line);
+
+            while(ss >> word) {
+            word = clean_string(word);
+
+            // The following line is equivalent to the below 5
+            words[word]++;
+
+            // auto it = words.find(word);
+            // if (it == words.end())
+            //     words[word] = 1;
+            // else
+            //     words[word] += 1;
+        }
+    }
         
         in_file.close();
         display_words(words);
@@ -79,10 +94,25 @@ void part2() {
     std::map<std::string, std::set<int>> words;
     std::string line;
     std::string word;
-    std::ifstream in_file {"../words.txt"};
+    std::ifstream in_file {"./words.txt"};
     if (in_file) {
-     
-        // You implement this code
+        int line_number = 0;
+
+    while(std::getline(in_file, line)) {
+        std::stringstream ss(line);
+        line_number++;
+
+            while(ss >> word) {
+            word = clean_string(word);
+
+            // The following line is equivalent to the below 3
+            words[word].insert(line_number);
+
+            // std::size_t found = line.find(word);
+            // if (found!=std::string::npos)
+            //     words[word].insert(line_number);
+        }
+    }
         
         in_file.close();
         display_words(words);

@@ -12,8 +12,8 @@ public:
     Person(std::string name, int age) 
         : name{name}, age{age}  {}
     bool operator<(const Person &rhs) const {
-        // return this->age < rhs.age;
-        return this->name < rhs.name;
+        return this->age < rhs.age;      // compare ages
+        // return this->name < rhs.name; // compare names
     }
     bool operator==(const Person &rhs) const {
         return (this->name == rhs.name && this->age == rhs.age);
@@ -44,7 +44,7 @@ void  test1() {
     std::cout << "\nTest1 =========================" << std::endl;
 
     std::priority_queue<int> pq;
-    for (int i : {3,5,7,12,23,12,4,100,0, 3,5,7})
+    for (int i : {3,5,7,12,23,12,4,100,0, 3,5,7}) // duplicates will be added
         pq.push(i);
         
     std::cout << "Size: " << pq.size() << std::endl;
