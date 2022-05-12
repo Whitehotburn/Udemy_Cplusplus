@@ -83,7 +83,7 @@ int main()
 
     vec1 = {1,2,3,4};
     std::transform(vec1.begin(), vec1.end(), vec1.begin(), [](int x) { return x * 100;});
-    std::for_each(vec1.begin(), vec1.end(), [](int x) {std::cout << x   << " "; });   // 100 200 300 400 500
+    std::for_each(vec1.begin(), vec1.end(), [](int x) {std::cout << x   << " "; });   // 100 200 300 400
   
     std::cout << std::endl;
     
