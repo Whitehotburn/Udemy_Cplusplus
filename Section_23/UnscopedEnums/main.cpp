@@ -244,8 +244,8 @@ void test3() {
 
 int main()
 {
-//  test1();
-//	test2();
+    test1();
+	test2();
 	test3();
 	
 	std::cout << "\n";

@@ -175,7 +175,7 @@ public:
     Person(std::string name, int age) : name{name}, age{age} {}
     Person(const Person &p) = default;
     ~Person() = default;
-     std::string get_name() const { return name; }
+    std::string get_name() const { return name; }
     void set_name(std::string name) {this->name = name; };
     int get_age() const {return age; }
     void set_age(int age) {this->age = age; }
